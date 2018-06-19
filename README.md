@@ -40,6 +40,10 @@ Note that contrary to @Value, SpEL expressions are not evaluated since property 
 
 [org.springframework.context.annotation.Bean/doc](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/context/annotation/Bean.html)
 
+## EnvironmentManager/Environment
+
+[spring-cloud.html#_endpoints](http://projects.spring.io/spring-cloud/spring-cloud.html#_endpoints)
+
 ## LICENSE
 
 ### [CC-BY-SA-3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/cn/)

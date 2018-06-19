@@ -25,11 +25,19 @@ For a Spring Boot Actuator application there are some additional management endp
 `/refresh` for re-loading the boot strap context and refreshing the `@RefreshScope` beans
 
 
-### ConfigurationProperties
+### ConfigurationProperties & Configuration
 
-Annotation for externalized configuration. Add this to a class definition or a {@code @Bean} method in a {@code @Configuration} class if you want to bind and validate some external Properties (e.g. from a .properties file).Note that contrary to {@code @Value}, SpEL expressions are not evaluated since property values are externalized.
+#### ConfigurationProperties
 
-### Configuration
+[org.springframework.boot.context.properties.ConfigurationProperties/doc](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/javadoc-api/)
+
+Annotation for externalized configuration. Add this to a class definition or a @Bean method in a @Configuration class if you want to bind and validate some external Properties (e.g. from a .properties file).
+Note that contrary to @Value, SpEL expressions are not evaluated since property values are externalized.
+
+#### Configuration
+
+[org.springframework.context.annotation.Configuration/doc](https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/api/)
+
 
 
 ## LICENSE

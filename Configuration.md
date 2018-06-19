@@ -28,10 +28,10 @@ public @interface Configuration
 
 ```java
 AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-  ctx.register(AppConfig.class);
-  ctx.refresh();
-  MyBean myBean = ctx.getBean(MyBean.class);
-  // use myBean ...
+ctx.register(AppConfig.class);
+ctx.refresh();
+MyBean myBean = ctx.getBean(MyBean.class);
+// use myBean ...
 ```
 
 有关更多详细信息，请参阅 `AnnotationConfigApplicationContext` `Javadoc`，有关 `web.xml` 配置说明，请参阅 `AnnotationConfigWebApplicationContext`。
@@ -82,6 +82,7 @@ public class AppConfig {
 有关详细信息，请参阅 `@ComponentScan javadoc`。
 
 ## 使用外部化值
+
 ## 使用环境API
 
 外部化的值可以通过像往常一样将 `Spring Environment` 注入 `@Configuration` 类来查找（例如使用 `@Autowired` 注解）：
@@ -105,16 +106,16 @@ public class AppConfig {
 
 ```java
 @Configuration
- @PropertySource("classpath:/com/acme/app.properties")
- public class AppConfig {
+@PropertySource("classpath:/com/acme/app.properties")
+public class AppConfig {
 
-     @Inject Environment env;
+  @Inject Environment env;
 
-     @Bean
-     public MyBean myBean() {
-         return new MyBean(env.getProperty("bean.name"));
-     }
- }
+  @Bean
+  public MyBean myBean() {
+     return new MyBean(env.getProperty("bean.name"));
+  }
+}
 ```
 
 有关更多详细信息，请参阅 `Environment` 和 `@PropertySource Javadoc`。

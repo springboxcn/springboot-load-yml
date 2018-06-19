@@ -29,15 +29,16 @@ For a Spring Boot Actuator application there are some additional management endp
 
 #### ConfigurationProperties
 
-[org.springframework.boot.context.properties.ConfigurationProperties/doc](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/javadoc-api/)
+[org.springframework.boot.context.properties.ConfigurationProperties/doc](https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/api/org/springframework/boot/context/properties/ConfigurationProperties.html)
 
 Annotation for externalized configuration. Add this to a class definition or a @Bean method in a @Configuration class if you want to bind and validate some external Properties (e.g. from a .properties file).
 Note that contrary to @Value, SpEL expressions are not evaluated since property values are externalized.
 
 #### Configuration
 
-[org.springframework.context.annotation.Configuration/doc](https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/api/)
+[org.springframework.context.annotation.Configuration/doc](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/context/annotation/Configuration.html)
 
+[org.springframework.context.annotation.Bean](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/context/annotation/Bean.html)
 
 
 ## LICENSE

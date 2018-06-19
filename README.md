@@ -38,8 +38,7 @@ Note that contrary to @Value, SpEL expressions are not evaluated since property 
 
 [org.springframework.context.annotation.Configuration/doc](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/context/annotation/Configuration.html)
 
-[org.springframework.context.annotation.Bean](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/context/annotation/Bean.html)
-
+[org.springframework.context.annotation.Bean/doc](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/context/annotation/Bean.html)
 
 ## LICENSE
 

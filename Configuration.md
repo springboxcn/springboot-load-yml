@@ -109,12 +109,21 @@ public class AppConfig {
 @PropertySource("classpath:/com/acme/app.properties")
 public class AppConfig {
 
+<<<<<<< HEAD
   @Inject Environment env;
 
   @Bean
   public MyBean myBean() {
      return new MyBean(env.getProperty("bean.name"));
   }
+=======
+ @Inject Environment env;
+
+ @Bean
+ public MyBean myBean() {
+     return new MyBean(env.getProperty("bean.name"));
+ }
+>>>>>>> 10c32bb26151221ab974290439128208f201e831
 }
 ```
 
@@ -126,16 +135,16 @@ public class AppConfig {
 
 ```java
 @Configuration
- @PropertySource("classpath:/com/acme/app.properties")
- public class AppConfig {
+@PropertySource("classpath:/com/acme/app.properties")
+public class AppConfig {
 
-     @Value("${bean.name}") String beanName;
+ @Value("${bean.name}") String beanName;
 
-     @Bean
-     public MyBean myBean() {
-         return new MyBean(beanName);
-     }
+ @Bean
+ public MyBean myBean() {
+     return new MyBean(beanName);
  }
+}
 ```
 
 这种方法在使用 `Spring` 的 `PropertySourcesPlaceholderConfigurer` 时非常有用，通常通过 `XML` 通过 `<context：property-placeholder />`启用。 
@@ -151,29 +160,29 @@ public class AppConfig {
 
 ```java
 @Configuration
- public class DatabaseConfig {
+public class DatabaseConfig {
 
-     @Bean
-     public DataSource dataSource() {
-         // instantiate, configure and return DataSource
-     }
+ @Bean
+ public DataSource dataSource() {
+     // instantiate, configure and return DataSource
+ }
+}
+
+@Configuration
+@Import(DatabaseConfig.class)
+public class AppConfig {
+
+ private final DatabaseConfig dataConfig;
+
+ public AppConfig(DatabaseConfig dataConfig) {
+     this.dataConfig = dataConfig;
  }
 
- @Configuration
- @Import(DatabaseConfig.class)
- public class AppConfig {
-
-     private final DatabaseConfig dataConfig;
-
-     public AppConfig(DatabaseConfig dataConfig) {
-         this.dataConfig = dataConfig;
-     }
-
-     @Bean
-     public MyBean myBean() {
-         // reference the dataSource() bean method
-         return new MyBean(dataConfig.dataSource());
-     }
+ @Bean
+ public MyBean myBean() {
+     // reference the dataSource() bean method
+     return new MyBean(dataConfig.dataSource());
+ }
  }
 ```
 
@@ -189,24 +198,24 @@ new AnnotationConfigApplicationContext(AppConfig.class);
 
 ```java
 @Profile("development")
- @Configuration
- public class EmbeddedDatabaseConfig {
+@Configuration
+public class EmbeddedDatabaseConfig {
 
-     @Bean
-     public DataSource dataSource() {
-         // instantiate, configure and return embedded DataSource
-     }
+ @Bean
+ public DataSource dataSource() {
+     // instantiate, configure and return embedded DataSource
  }
+}
 
- @Profile("production")
- @Configuration
- public class ProductionDatabaseConfig {
+@Profile("production")
+@Configuration
+public class ProductionDatabaseConfig {
 
-     @Bean
-     public DataSource dataSource() {
-         // instantiate, configure and return production DataSource
-     }
+ @Bean
+ public DataSource dataSource() {
+     // instantiate, configure and return production DataSource
  }
+}
 ```
 
 或者，您也可以在 `@Bean` 方法级别声明配置文件条件，例如 用于相同配置类中的替代 `bean` 变体：

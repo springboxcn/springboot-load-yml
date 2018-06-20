@@ -109,21 +109,12 @@ public class AppConfig {
 @PropertySource("classpath:/com/acme/app.properties")
 public class AppConfig {
 
-<<<<<<< HEAD
   @Inject Environment env;
 
   @Bean
   public MyBean myBean() {
      return new MyBean(env.getProperty("bean.name"));
   }
-=======
- @Inject Environment env;
-
- @Bean
- public MyBean myBean() {
-     return new MyBean(env.getProperty("bean.name"));
- }
->>>>>>> 10c32bb26151221ab974290439128208f201e831
 }
 ```
 
